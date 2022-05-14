@@ -1,4 +1,34 @@
 # social-media-clone2
+def new_welcome_page(nickname):
+    print("========================= < FACEMASH > ============================")
+    print(f" hello!, {nickname}, hopefully you would enjoy staying with us again!")
+    print("====================================================================")
+    print("||A.)Profile                                                      ||")
+    print("||B.)Bio                                                          ||")
+    print("||C.)Info                                                         ||")
+    print("||D.)Settings                                                     ||")
+    print("====================================================================")
+    while True:
+        try:
+            functionality = input("Enter the letter of the page you want to enter: (A,B,C or D): ").upper()
+            if functionality == "A":
+                option_profile(input_nickname)
+                break
+            elif functionality == "B":
+                bio(input_nickname)
+                break
+            elif functionality == "C":
+                info(input_nickname)
+                break
+            elif functionality == "D":
+                settings(input_nickname)
+                break
+            else:
+                print("wrong credentials, please try again...")
+        except ValueError:
+            print("please use the appropriate functions available...")
+
+
 def change_nickname(nickname):
     input_nickname_change = input("Enter the exchange name for the current used: ").lower()
     input_nickname = input_nickname_change
@@ -16,17 +46,14 @@ def change_nickname(nickname):
             print("wrong credentials, please use (yes or no) only ...")
 
 
-
-
-
-
-
 def option_profile(nickname):
     print(f"welcome {nickname} to profile")
     print("=========== < Profile > ==============")
     nickname = nickname
     print("1.) change nickname?")
-    print("go back (yes or no)? ")
+    print("go back?  ")
+    print("2.) yes ")
+    print("3.) no ")
     while True:
         try:
             profile_input = int(input("Enter the number of function: "))
@@ -34,8 +61,10 @@ def option_profile(nickname):
             if profile_input == 1:
                 change_nickname(nickname)
                 break
-            elif profile_input == "yes":
-                pass
+            elif profile_input == 2:
+                new_welcome_page(nickname)
+            elif profile_input == 3:
+                option_profile(nickname)
             else:
                 print("wrong credentials, please try again...")
         except ValueError as e:
