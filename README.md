@@ -155,9 +155,7 @@ def option_profile(nickname):
     print("=========== < Profile > ==============")
     nickname = nickname
     print("1.) change nickname?")
-    print("go back?  ")
-    print("2.) yes ")
-    print("3.) no ")
+    print("wish to go back in the previous page? [(1)yes or (2)no]  ")
     while True:
         try:
             profile_input = int(input("Enter the number of function: "))
